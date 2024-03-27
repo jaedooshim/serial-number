@@ -15,11 +15,6 @@ export class AdminService {
   async compareSerialNumber(serialNumber: number): Promise<string> {
     const compare = await this.adminRepository.findSerialNumber(serialNumber);
     if (!compare) throw new ConflictException('인증번호가 일치하지 않습니다. 확인 후 입력 바랍니다.');
-    // await this.verifyNumber(compare.serialNumber, serialNumber);
     return '인증번호가 일치합니다.';
   }
-
-  // async verifyNumber(serialNumber: number, compareNumber: number): Promise<void> {
-  //   if (serialNumber !== compareNumber) throw new ConflictException('인증번호가 일치하지 않습니다. 확인 후 입력 바랍니다.');
-  // }
 }
