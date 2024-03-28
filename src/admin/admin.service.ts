@@ -17,4 +17,7 @@ export class AdminService {
     if (!compare) throw new ConflictException('인증번호가 일치하지 않습니다. 확인 후 입력 바랍니다.');
     return '인증번호가 일치합니다.';
   }
+
+  // expires 유효시간을 줘서, 코드 일련번호 재사용 금지
+  // 유효시간 설정 로직 추가 예정
 }
